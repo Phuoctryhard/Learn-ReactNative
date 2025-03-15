@@ -53,3 +53,15 @@ Join our community of developers creating universal apps.
 
 expo init my-new-app --template blank
 
+## lí do sử dụng map
+
+không làm thay đổi giá trị ban đầu , tạo ra 1 mảng mới
+
+## warning :
+
+tối ưu hóa nó với hiệu suất 100%
+
+## lăn chuột tới đâu ren der tới đó
+- Tối ưu hóa việc render 
+
+## Cọ sát bài toán thực tế ko chỉ học lí thuyết

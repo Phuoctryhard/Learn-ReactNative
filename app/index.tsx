@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Text, TextInput, View } from "react-native";
+import { Button, ScrollView, Text, TextInput, View } from "react-native";
 import { StyleSheet } from "react-native";
 export default function Index() {
   interface user {
@@ -14,6 +14,53 @@ export default function Index() {
   });
   const [count, setCount] = useState<number>(1);
 
+  const [student, setStudent] = useState([
+    {
+      id: 1,
+      name: "Eric",
+      age: 18,
+    },
+    {
+      id: 2,
+      name: "Eric phước",
+      age: 20,
+    },
+    {
+      id: 2,
+      name: "Eric phước",
+      age: 20,
+    },
+    {
+      id: 1,
+      name: "Eric",
+      age: 18,
+    },
+    {
+      id: 2,
+      name: "Eric phước",
+      age: 20,
+    },
+    {
+      id: 2,
+      name: "Eric phước",
+      age: 20,
+    },
+    {
+      id: 1,
+      name: "Eric",
+      age: 18,
+    },
+    {
+      id: 2,
+      name: "Eric phước",
+      age: 20,
+    },
+    {
+      id: 2,
+      name: "Eric phước",
+      age: 20,
+    },
+  ]);
   const handlePlus = () => {
     setCount((prev) => prev + 1);
   };
@@ -60,11 +107,29 @@ export default function Index() {
           borderWidth: 2,
           width: 200,
           padding: 10,
-          
         }}
-        keyboardType='numeric'
+        keyboardType="numeric"
         onChangeText={(value) => setName(value)}
       />
+      {/* scroll : y */}
+      <ScrollView style={{ flex: 1, padding: 20 }}>
+        <View>
+          {student.map((element) => {
+            return (
+              <View
+                key={element.id}
+                style={{
+                  padding: 4,
+                  marginBottom: 5,
+                  backgroundColor: "green",
+                }}
+              >
+                <Text>{element.name}</Text>
+              </View>
+            );
+          })}
+        </View>
+      </ScrollView>
     </View>
   );
 }
