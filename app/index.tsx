@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { Button, ScrollView, Text, TextInput, View } from "react-native";
+import {
+  Button,
+  FlatList,
+  ScrollView,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 import { StyleSheet } from "react-native";
 export default function Index() {
   interface user {
@@ -112,7 +119,7 @@ export default function Index() {
         onChangeText={(value) => setName(value)}
       />
       {/* scroll : y */}
-      <ScrollView style={{ flex: 1, padding: 20 }}>
+      {/* <ScrollView style={{ flex: 1, padding: 20 }}>
         <View>
           {student.map((element) => {
             return (
@@ -129,7 +136,37 @@ export default function Index() {
             );
           })}
         </View>
-      </ScrollView>
+      </ScrollView> */}
+
+      {/* sử dụng Flast list  */}
+
+      <FlatList
+        data={student}
+        numColumns={2}
+
+        renderItem={({ item }) => {
+          return (
+            <View>
+              {student.map((element) => {
+                return (
+                  <View
+                    key={element.id}
+                    style={{
+                      padding: 4,
+                      marginBottom: 5,
+                      backgroundColor: "green",
+                      marginHorizontal:2
+                    }}
+                  >
+                    <Text>{element.name}</Text>
+                  </View>
+                );
+              })}
+            </View>
+          );
+        }}
+        keyExtractor={(item) => item.id + ""}
+      />
     </View>
   );
 }

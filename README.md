@@ -61,7 +61,26 @@ không làm thay đổi giá trị ban đầu , tạo ra 1 mảng mới
 
 tối ưu hóa nó với hiệu suất 100%
 
-## lăn chuột tới đâu ren der tới đó
+## lăn chuột tới đâu render tới đó
 - Tối ưu hóa việc render 
 
 ## Cọ sát bài toán thực tế ko chỉ học lí thuyết
+
+
+## Flat list
+- mặc định có scroll 
+- lấy trường key : làm id 
+mặc định lấy chỉ số của mảng
+keyExtractor = {item=>item.id + ""}
+lấy Key dựa vào id
+
+Tính năng	ScrollView ❌	FlatList ✅
+Render dữ liệu	Tất cả cùng lúc	Từng phần khi cần
+Hiệu suất	Chậm khi danh sách dài	Mượt mà hơn
+Dùng cho danh sách lớn	❌ Không khuyến khích	✅ Nên dùng
+
+Cách FlatList Giải Quyết
+Render với danh sách động chứ ý động
+✅ Render từng phần nhỏ thay vì toàn bộ danh sách
+✅ Tự động tải thêm item khi cần (lazy loading)
+✅ Hiệu suất tốt hơn, tránh crash app do dùng quá nhiều RAM
